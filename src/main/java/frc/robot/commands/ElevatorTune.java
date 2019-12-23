@@ -32,13 +32,13 @@ public class ElevatorTune extends Command {
     //System.out.println("owo");
     joyPOVVal = Robot.m_oi.joystickZero.getPOV();
     if (joyPOVVal == -1) {
-        Robot.elevatorWinch.stop();
+        //Robot.elevatorWinch.stop();
     } else if (joyPOVVal < 90 || joyPOVVal > 270) {
         System.out.println("Rolling Up w/ Main Directional Joystick");
-        Robot.elevatorWinch.rollUpSlow();
+        //Robot.elevatorWinch.rollUpSlow();
     } else if (joyPOVVal > 90 && joyPOVVal < 270) {
         System.out.println("Rolling Down w/ Main Directional Joystick");
-        Robot.elevatorWinch.rollDownSlow();
+        //Robot.elevatorWinch.rollDownSlow();
     }
     //joyOneVal = Robot.m_oi.joystickOne.getX();
     //if (joyOneVal <= 0.1 && joyOneVal >= -0.1) {

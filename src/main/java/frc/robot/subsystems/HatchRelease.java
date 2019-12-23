@@ -24,13 +24,13 @@ public class HatchRelease extends Subsystem {
      oneHatchPusher.set(true);
    }
 
-  public boolean hatchout(){
-    if(Robot.hatchRelease.oneHatchPusher.get() == true) {
-      return true;
-    }else{
-      return false;
-    }
-}
+  // public boolean hatchout(){
+  //   if(Robot.hatchRelease.oneHatchPusher.get() == true) {
+  //     return true;
+  //   }else{
+  //     return false;
+  //   }
+  // }
 //   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

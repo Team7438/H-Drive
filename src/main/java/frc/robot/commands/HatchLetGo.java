@@ -20,14 +20,14 @@ public class HatchLetGo extends Command {
   public HatchLetGo() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.elevatorWinch);
+    // requires(Robot.elevatorWinch);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
     //Robot.elevatorWinch.ElevatorEncoderReset();
-    desiredHeight = Robot.elevatorWinch.GetCurrentHeight()-330;
+    // desiredHeight = Robot.elevatorWinch.GetCurrentHeight()-330;
     travelDistanceup = desiredHeight+15;
     travelDistancedown = desiredHeight-15;
     timer = 0;
@@ -37,16 +37,16 @@ public class HatchLetGo extends Command {
   @Override
   protected void execute() {
     timer += 1;
-    Robot.elevatorWinch.eleEncoderUpdate();
-    if(ElevatorWinch.height < travelDistancedown){
-      Robot.elevatorWinch.rollUp();
-    }else if(ElevatorWinch.height > travelDistanceup) {
-      Robot.elevatorWinch.rollDown();
-    }else if (desiredHeight != 0) {
-      Robot.elevatorWinch.stop();
-    }else {
-      ElevatorWinch.elevatorWinch.setSpeed(0);
-    }
+    // Robot.elevatorWinch.eleEncoderUpdate();
+    // if(ElevatorWinch.height < travelDistancedown){
+    //   Robot.elevatorWinch.rollUp();
+    // }else if(ElevatorWinch.height > travelDistanceup) {
+    //   Robot.elevatorWinch.rollDown();
+    // }else if (desiredHeight != 0) {
+    //   Robot.elevatorWinch.stop();
+    // }else {
+    //   ElevatorWinch.elevatorWinch.setSpeed(0);
+    // }
     
   }
   
@@ -79,7 +79,7 @@ public class HatchLetGo extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.elevatorWinch.stop();
+    //Robot.elevatorWinch.stop();
 
   }
 

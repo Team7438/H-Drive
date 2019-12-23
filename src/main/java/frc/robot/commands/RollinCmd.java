@@ -13,7 +13,7 @@ import frc.robot.subsystems.CargoLoader;
 
 public class RollinCmd extends Command {
   public RollinCmd() {
-    requires(Robot.cargoLoader);
+    // requires(Robot.cargoLoader);
 
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -27,7 +27,7 @@ public class RollinCmd extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.cargoLoader.Rollin();
+    // Robot.cargoLoader.Rollin();
     
   }
 

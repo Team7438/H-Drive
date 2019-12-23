@@ -15,7 +15,7 @@ public class RolloutCmd extends Command {
   public RolloutCmd() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.cargoLoader);
+    // requires(Robot.cargoLoader);
 
   }
 
@@ -27,7 +27,7 @@ public class RolloutCmd extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.cargoLoader.Rollout();
+    // Robot.cargoLoader.Rollout();
 
   }
 

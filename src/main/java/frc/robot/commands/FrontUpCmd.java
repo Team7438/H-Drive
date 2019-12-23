@@ -15,7 +15,7 @@ public class FrontUpCmd extends Command {
   public FrontUpCmd() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.frontClimber);
+    // requires(Robot.frontClimber);
 
   }
 
@@ -27,7 +27,7 @@ public class FrontUpCmd extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.frontClimber.FrontUp();
+    // Robot.frontClimber.FrontUp();
 
   }
 

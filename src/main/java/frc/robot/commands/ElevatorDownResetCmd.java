@@ -15,13 +15,13 @@ public class ElevatorDownResetCmd extends Command {
   boolean hitBottom;
   boolean cmdFinished;
   
-  public ElevatorDownResetCmd() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(Robot.elevatorWinch);
-    hitBottom=false;
-    cmdFinished=false;
-  }
+  // public ElevatorDownResetCmd() {
+  //   // Use requires() here to declare subsystem dependencies
+  //   // eg. requires(chassis);
+  //   requires(Robot.elevatorWinch);
+  //   hitBottom=false;
+  //   cmdFinished=false;
+  // }
 
   // Called just before this Command runs the first time
   @Override
@@ -32,22 +32,22 @@ public class ElevatorDownResetCmd extends Command {
   @Override
   protected void execute() {
     
-    Robot.elevatorWinch.eleEncoderUpdate();
+    //Robot.elevatorWinch.eleEncoderUpdate();
 
-    if (!hitBottom) {
-      if(!Robot.elevatorWinch.elevatorLimitPressed()){
-        Robot.elevatorWinch.rollDown();
-      } else {
-        Robot.elevatorWinch.ElevatorEncoderReset();
-        hitBottom=true;
-      }
-    } else {
-      if (Robot.elevatorWinch.elevatorEncoder.getRaw() <= 25) {
-        Robot.elevatorWinch.elevatorWinch.setSpeed(.3);
-      } else {
-          cmdFinished=true;
-      }
-    }
+    // if (!hitBottom) {
+    //   if(!Robot.elevatorWinch.elevatorLimitPressed()){
+    //     Robot.elevatorWinch.rollDown();
+    //   } else {
+    //     Robot.elevatorWinch.ElevatorEncoderReset();
+    //     hitBottom=true;
+    //   }
+    // } else {
+    //   if (Robot.elevatorWinch.elevatorEncoder.getRaw() <= 25) {
+    //     Robot.elevatorWinch.elevatorWinch.setSpeed(.3);
+    //   } else {
+    //       cmdFinished=true;
+    //   }
+    // }
   }
 
   // Make this return true when this Command no longer needs to run execute()

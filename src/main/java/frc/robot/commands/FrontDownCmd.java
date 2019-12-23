@@ -15,7 +15,7 @@ import frc.robot.subsystems.FrontClimber;
 
 public class FrontDownCmd extends Command {
   public FrontDownCmd() {
-    requires(Robot.frontClimber);
+    // requires(Robot.frontClimber);
 
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -29,7 +29,7 @@ public class FrontDownCmd extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.frontClimber.FrontDown();
+    // Robot.frontClimber.FrontDown();
     
   }
 

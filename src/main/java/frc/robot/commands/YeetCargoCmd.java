@@ -17,7 +17,7 @@ public class YeetCargoCmd extends Command {
   public YeetCargoCmd() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.cargoLoader);
+    // requires(Robot.cargoLoader);
     yeetDone=false;
     countIt=0;
   }
@@ -32,10 +32,10 @@ public class YeetCargoCmd extends Command {
   protected void execute() {
     while(countIt<4000) {
       System.out.print(countIt);
-      Robot.cargoLoader.Rollout();
+      // Robot.cargoLoader.Rollout();
       countIt = countIt+1;
     }
-    Robot.cargoLoader.RollStop();
+    // Robot.cargoLoader.RollStop();
     yeetDone=true;
   }
 

@@ -15,7 +15,7 @@ import frc.robot.subsystems.ElevatorTilt;
 public class ElevatorTiltCmd extends Command {
   Value direction;
   public ElevatorTiltCmd(Value inputdirection) {
-    requires(Robot.elevatorTilt);
+    //requires(Robot.elevatorTilt);
     direction = inputdirection;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -25,9 +25,9 @@ public class ElevatorTiltCmd extends Command {
   @Override
   protected void initialize() {
     if(direction == Value.kForward){
-      Robot.elevatorTilt.eleUp();
+      //Robot.elevatorTilt.eleUp();
     }else if (direction == Value.kReverse){
-      Robot.elevatorTilt.eleDown();
+      //Robot.elevatorTilt.eleDown();
 
     }
   }
@@ -53,7 +53,7 @@ public class ElevatorTiltCmd extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.elevatorTilt.eleStop();
+    //Robot.elevatorTilt.eleStop();
   }
 
   // Called when another command which requires one or more of the same

@@ -15,17 +15,17 @@ public class HatchSwitch extends Command {
   public HatchSwitch() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.hatchRelease);
+    // requires(Robot.hatchRelease);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    if(Robot.hatchRelease.hatchout() == true) {
-      Robot.hatchRelease.pushBack();
-    }else{
-      Robot.hatchRelease.pushAway();
-    }
+    // if(Robot.hatchRelease.hatchout() == true) {
+    //   Robot.hatchRelease.pushBack();
+    // }else{
+    //   Robot.hatchRelease.pushAway();
+    // }
   }
 
   // Called repeatedly when this Command is scheduled to run

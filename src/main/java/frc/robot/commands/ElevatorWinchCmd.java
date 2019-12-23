@@ -21,7 +21,7 @@ public class ElevatorWinchCmd extends Command {
   public ElevatorWinchCmd(double height) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.elevatorWinch);
+    //requires(Robot.elevatorWinch);
     travelDistanceup = height+15;
     travelDistancedown = height-15;
     desiredHeight = height;
@@ -38,13 +38,13 @@ public class ElevatorWinchCmd extends Command {
   @Override
   protected void execute() {
     timer += 1;
-    Robot.elevatorWinch.eleEncoderUpdate();
+    //Robot.elevatorWinch.eleEncoderUpdate();
     if(ElevatorWinch.height < travelDistancedown){
-      Robot.elevatorWinch.rollUp();
+      //Robot.elevatorWinch.rollUp();
     }else if(ElevatorWinch.height > travelDistanceup) {
-      Robot.elevatorWinch.rollDown();
+      //Robot.elevatorWinch.rollDown();
     }else if (desiredHeight != 0) {
-      Robot.elevatorWinch.stop();
+      //Robot.elevatorWinch.stop();
     }else {
       ElevatorWinch.elevatorWinch.setSpeed(0);
     }
@@ -80,7 +80,7 @@ public class ElevatorWinchCmd extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.elevatorWinch.stop();
+    //Robot.elevatorWinch.stop();
 
   }
 

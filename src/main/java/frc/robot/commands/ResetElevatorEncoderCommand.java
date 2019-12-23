@@ -12,7 +12,7 @@ import frc.robot.Robot;
 
 public class ResetElevatorEncoderCommand extends Command {
   public ResetElevatorEncoderCommand() {
-    requires(Robot.elevatorWinch);
+    // requires(Robot.elevatorWinch);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -20,7 +20,7 @@ public class ResetElevatorEncoderCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.elevatorWinch.ElevatorEncoderReset();
+    // Robot.elevatorWinch.ElevatorEncoderReset();
   }
 
   // Called repeatedly when this Command is scheduled to run

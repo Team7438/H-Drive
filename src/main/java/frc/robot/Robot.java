@@ -19,29 +19,29 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.Autofront;
-import frc.robot.commands.CentreHatch;
+//import frc.robot.commands.Autofront;
+//import frc.robot.commands.CentreHatch;
 import frc.robot.commands.DriveCmd;
-import frc.robot.commands.AutoRight1;
-import frc.robot.commands.AutoRight2;
-import frc.robot.commands.AutoRight3;
-import frc.robot.commands.AutoRightHatch;
-import frc.robot.commands.AutoLeft1;
-import frc.robot.commands.AutoLeft2;
-import frc.robot.commands.AutoLeft3;
-import frc.robot.commands.ResetElevatorEncoderCommand;
+//import frc.robot.commands.AutoRight1;
+//import frc.robot.commands.AutoRight2;
+//import frc.robot.commands.AutoRight3;
+//import frc.robot.commands.AutoRightHatch;
+//import frc.robot.commands.AutoLeft1;
+//import frc.robot.commands.AutoLeft2;
+//import frc.robot.commands.AutoLeft3;
+//import frc.robot.commands.ResetElevatorEncoderCommand;
 import frc.robot.subsystems.DriveSub;
-import frc.robot.subsystems.ElevatorTilt;
-import frc.robot.subsystems.ElevatorWinch;
-import frc.robot.subsystems.CargoLoader;
-import frc.robot.subsystems.FrontClimber;
-import frc.robot.commands.ElevatorTiltCmd;
-import frc.robot.commands.ElevatorTune;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import frc.robot.subsystems.HatchRelease;
-import frc.robot.chenyxVision.AutoRun;
-// import frc.robot.subsystems.PIDElevator;
-import frc.robot.chenyxVision.HUD;
+//import frc.robot.subsystems.ElevatorTilt;
+//import frc.robot.subsystems.ElevatorWinch;
+//import frc.robot.subsystems.CargoLoader;
+//import frc.robot.subsystems.FrontClimber;
+//import frc.robot.commands.ElevatorTiltCmd;
+//import frc.robot.commands.ElevatorTune;
+//import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+//import frc.robot.subsystems.HatchRelease;
+//import frc.robot.chenyxVision.AutoRun;
+// Was commented out import frc.robot.subsystems.PIDElevator;
+//import frc.robot.chenyxVision.HUD;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -57,15 +57,15 @@ public class Robot extends TimedRobot {
   public static final String MecanumDriver = null;
   public static OI m_oi;
   public static DriveSub driveSub = new DriveSub();
-  public static CargoLoader cargoLoader = new CargoLoader();
-  public static HatchRelease hatchRelease = new HatchRelease();
-  public static ElevatorTilt elevatorTilt = new ElevatorTilt();
-  public static ElevatorWinch elevatorWinch = new ElevatorWinch();
-  public static FrontClimber frontClimber = new FrontClimber();
-  //public static UsbCamera camera;
-  private static HUD hud = HUD.getInstance();
+  //public static CargoLoader cargoLoader = new CargoLoader();
+  //public static HatchRelease hatchRelease = new HatchRelease();
+  //public static ElevatorTilt elevatorTilt = new ElevatorTilt();
+  //public static ElevatorWinch elevatorWinch = new ElevatorWinch();
+  //public static FrontClimber frontClimber = new FrontClimber();
+  // was commented out public static UsbCamera camera;
+  //private static HUD hud = HUD.getInstance();
  
-  public Command elevatorTuning = new ElevatorTune();
+  //public Command elevatorTuning = new ElevatorTune();
   public Command drivingCmd = new DriveCmd();
   // public static PIDElevator pIDElevatorWinch = new PIDElevator();
   // public static DoubleSolenoid hatchPusher = new DoubleSolenoid(RobotMap.hatchSole1, RobotMap.hatchSole2);
@@ -86,15 +86,15 @@ public class Robot extends TimedRobot {
 
     m_oi = new OI();
     
-    m_chooser.addOption("Center", new Autofront());
-    m_chooser.addOption("Left1", new AutoLeft1());
-    m_chooser.addOption("Left2", new AutoLeft2());
-    m_chooser.addOption("Left3", new AutoLeft3());
-    m_chooser.addOption("centerhatch", new CentreHatch());
-    m_chooser.addOption("Right1", new AutoRight1());
-    m_chooser.addOption("Right2", new AutoRight2());
-    m_chooser.addOption("Right3", new AutoRight3());
-    m_chooser.addOption("RightHatch1", new AutoRightHatch());
+    // m_chooser.addOption("Center", new Autofront());
+    // m_chooser.addOption("Left1", new AutoLeft1());
+    // m_chooser.addOption("Left2", new AutoLeft2());
+    // m_chooser.addOption("Left3", new AutoLeft3());
+    // m_chooser.addOption("centerhatch", new CentreHatch());
+    // m_chooser.addOption("Right1", new AutoRight1());
+    // m_chooser.addOption("Right2", new AutoRight2());
+    // m_chooser.addOption("Right3", new AutoRight3());
+    // m_chooser.addOption("RightHatch1", new AutoRightHatch());
     SmartDashboard.putData("Auto mode", m_chooser);
   
     driveSub.encoderReset();
@@ -135,8 +135,8 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     driveSub.encoderUpdate();
     driveSub.gyroUpdate();
-    Robot.elevatorWinch.eleEncoderUpdate();
-    Robot.elevatorWinch.updateElevatorStatus();
+    //Robot.elevatorWinch.eleEncoderUpdate();
+    //Robot.elevatorWinch.updateElevatorStatus();
    }
 
   /**
@@ -169,7 +169,7 @@ public class Robot extends TimedRobot {
 
     // schedule the autonomous command
     if (m_autonomousCommand != null) {
-      Robot.elevatorWinch.ElevatorEncoderReset();
+      //Robot.elevatorWinch.ElevatorEncoderReset();
       m_autonomousCommand.start();
     }
   }
@@ -181,7 +181,7 @@ public class Robot extends TimedRobot {
   public void autonomousPeriodic() {
     if (m_oi.joystickZero.getRawButton(9)) {
       m_autonomousCommand.cancel();
-      elevatorTuning.start();
+      //elevatorTuning.start();
       drivingCmd.start();
     }
     Scheduler.getInstance().run();
@@ -193,20 +193,20 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    SmartDashboard.putData("Reset Winch Encoder", new ResetElevatorEncoderCommand());
-    SmartDashboard.putData("ElevatorTilt: Forward", new ElevatorTiltCmd(Value.kForward));
-    SmartDashboard.putData("ElevatorTilt: Back", new ElevatorTiltCmd(Value.kReverse));
+    //SmartDashboard.putData("Reset Winch Encoder", new ResetElevatorEncoderCommand());
+    //SmartDashboard.putData("ElevatorTilt: Forward", new ElevatorTiltCmd(Value.kForward));
+    //SmartDashboard.putData("ElevatorTilt: Back", new ElevatorTiltCmd(Value.kReverse));
     driveSub.gyroReset();
     driveSub.encoderReset();
 
-    if (!elevatorTuning.isRunning()) {
+    //if (!elevatorTuning.isRunning()) {
       // Starts elevator control using the POV control on the joystick
-      elevatorTuning.start(); 
-    }
+    //  elevatorTuning.start(); 
+    //}
     
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+    //if (m_autonomousCommand != null) {
+    //  m_autonomousCommand.cancel();
+    //}
   }
 // if (!win) {
 //   win();

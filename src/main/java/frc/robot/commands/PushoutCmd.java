@@ -19,7 +19,7 @@ public class PushoutCmd extends Command {
   public PushoutCmd() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.hatchRelease);
+    // requires(Robot.hatchRelease);
   }
 
   // Called just before this Command runs the first time
@@ -27,7 +27,7 @@ public class PushoutCmd extends Command {
   protected void initialize() {
     // Robot.hatchRelease.hatchPusher.set(Value.kOff);
     timer  = 0;
-    Robot.hatchRelease.pushAway();
+    // Robot.hatchRelease.pushAway();
 
   }
 
@@ -43,14 +43,14 @@ public class PushoutCmd extends Command {
     if (timer < 12){
       return false;
     } else {
-      return Robot.hatchRelease.hatchout();
+      return  true; // Robot.hatchRelease.hatchout();
     }
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.hatchRelease.pushBack();
+    // Robot.hatchRelease.pushBack();
     // if (Robot.hatchRelease.hatchout() == false){
     //     Robot.hatchRelease.onehatchPusher.set(Value.kOff);
     //     }
@@ -64,7 +64,7 @@ public class PushoutCmd extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.hatchRelease.pushBack();
+    //Robot.hatchRelease.pushBack();
 
   }
 }

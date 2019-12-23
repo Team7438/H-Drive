@@ -12,6 +12,8 @@ import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -47,6 +49,7 @@ public class DriveSub extends Subsystem {
   public static Encoder m_encoderRight = new Encoder(RobotMap.rightEncoderPort1, RobotMap.rightEncoderPort2, false, Encoder.EncodingType.k4X);
   public static Encoder m_encoderLeft = new Encoder(RobotMap.leftEncoderPort1, RobotMap.leftEncoderPort2, true, Encoder.EncodingType.k4X);
   public static final DifferentialDrive DriveBase = new DifferentialDrive(Gleft, Gright);
+  public static VictorSPX centerMotor = new VictorSPX(RobotMap.center);
   public double minTurnSpeed = .45;
   public double zValue;
   public double yValue;
@@ -82,8 +85,10 @@ public class DriveSub extends Subsystem {
     //This next line overrides all the other stuff and feeds straight joystic values.
     //zAdjustedValue=zValue;
     DriveBase.arcadeDrive(yAdjustedValue, zAdjustedValue);
-    //DriveBase.arcadeDrive(squareInput(-joystickZero.getY())/1.3, squareInput(joystickZero.getZ())/1.2);
-    }
+    //DriveBase.arcadeDrive(squareInput(-joystickZero.getY())/3, squareInput(joystickZero.getZ())/3);
+    //centerMotor.setSpeed(-joystickZero.getX()/2);
+    centerMotor.set(ControlMode.PercentOutput, -joystickZero.getX()/2);
+  }
 
   public double squareInput(double input){
     if(input<0){
