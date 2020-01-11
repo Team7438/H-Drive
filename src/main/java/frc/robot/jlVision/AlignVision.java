@@ -4,6 +4,8 @@ import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class AlignVision {
 
@@ -17,50 +19,40 @@ public class AlignVision {
         return instance;
     }
 
-    private NetworkTableInstance ntinst;
+    private NetworkTableInstance sd;
     private NetworkTable outputTable;
     private NetworkTableEntry outputEntry;
     private NetworkTableEntry yawOutputEntry;
     private double[] motorPowerValues;
-    private static double turnPower = 0;
+    private static double turnPower = 0.1;
     private double centerPower = 0;
-    private double parallelAngle = 90;
-    private double Yaw = 0;
-    private double tempPower;
+    private double ballAngle = 0;
+    private static double tempPower = 0.2;
+    public static double tempVar;
 
     public volatile double timestamp=0, lastLockTime=0;
     public volatile boolean isConnected;
 
     public void AugmentedDriving() {
-
-        ntinst = NetworkTableInstance.getDefault();
-        outputTable = ntinst.getTable("VisionCoProcessor");
-        outputEntry = outputTable.getEntry("Parallel");
-        yawOutputEntry = outputTable.getEntry("Yaw");
-        outputEntry.addListener(event->{
-            parallelAngle = outputEntry.getDouble(90);
-            turnPower = turnRate(parallelAngle);
-        }, EntryListenerFlags.kNew|EntryListenerFlags.kUpdate);
-        yawOutputEntry.addListener(event->{
-            Yaw = outputEntry.getDouble(0);
-        }, EntryListenerFlags.kNew|EntryListenerFlags.kUpdate);
-
+        //Filler
     }
 
 
-    private double turnRate(double p) {
-
+    private static double turnRate(double p) {
 
         tempPower = Math.abs(p / 55);
-        if (tempPower < 0.1) {
-            tempPower = 0.1;
-        } else if (tempPower > 0.6) {
-            tempPower = 0.6;
+        if (p > -5 && p < 5) {
+            return 0;
+        }
+        if (tempPower < 0.2) {
+            tempPower = 0.2;
+        } else if (tempPower > 0.4) {
+            tempPower = 0.4;
         }
 
-        if (Yaw < 0) {
+        if (p < 0) {
             return tempPower * -1;
-        } else if (Yaw > 0) {
+        } else if (p > 0) {
             return tempPower;
         } else {
             return 0;
@@ -71,8 +63,10 @@ public class AlignVision {
     // private double centerMotor() {
 
     // }
-    
+
     public static double AugmentedDriverInterface() {
+        tempVar = SmartDashboard.getNumber("ballAngle", 0);
+        turnPower = turnRate(tempVar);
         return turnPower;
     }
 

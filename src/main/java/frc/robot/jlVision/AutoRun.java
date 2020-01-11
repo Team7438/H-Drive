@@ -18,6 +18,7 @@ public class AutoRun extends Command {
     }
     @Override
     protected void execute() {
+        System.out.println(AlignVision.AugmentedDriverInterface());
         DriveSub.DriveBase.arcadeDrive(0, AlignVision.AugmentedDriverInterface(), false);
     }
 
