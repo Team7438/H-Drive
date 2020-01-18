@@ -85,7 +85,7 @@ public class DriveSub extends Subsystem {
     //This next line overrides all the other stuff and feeds straight joystic values.
     //zAdjustedValue=zValue;
     //Used to be adjusted value, changed to yValue to make it faster.
-    DriveBase.arcadeDrive(yValue * -1, -zValue * -1);
+    DriveBase.arcadeDrive(yValue * -1, zValue/2);
     //DriveBase.arcadeDrive(squareInput(-joystickZero.getY())/3, squareInput(joystickZero.getZ())/3);
     //centerMotor.setSpeed(-joystickZero.getX()/2);
     centerMotor.set(ControlMode.PercentOutput, joystickZero.getX());

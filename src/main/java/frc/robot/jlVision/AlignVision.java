@@ -29,6 +29,7 @@ public class AlignVision {
     private double ballAngle = 0;
     private static double tempPower = 0.2;
     public static double tempVar;
+    public static double ballRad;
 
     public volatile double timestamp=0, lastLockTime=0;
     public volatile boolean isConnected;
@@ -68,6 +69,20 @@ public class AlignVision {
         tempVar = SmartDashboard.getNumber("ballAngle", 0);
         turnPower = turnRate(tempVar);
         return turnPower;
+    }
+
+    public static double AugmentedDriverInterfaceForward() {
+        ballRad = SmartDashboard.getNumber("ballRadius", 100);
+        if (ballRad <= 55) {
+            if ((0.6 - (ballRad/55)) < 0.1) {
+                return 0.2;
+            } else {
+                return (0.8 - (ballRad/55));
+            }
+        } else {
+            return 0;
+        }
+
     }
 
 }
