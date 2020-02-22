@@ -7,7 +7,6 @@
 
 package frc.robot.commands;
 
-import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
@@ -18,7 +17,6 @@ public class RotateCmd extends Command {
   public boolean firstTime = true;
   private double goalAngle = 0.0;
 	private boolean isDone = false;
-	private double speed = .5; 
 	private double tolerance = 10;
 	private double currentAngle;
   private double turningSpeed;  

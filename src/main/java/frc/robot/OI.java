@@ -8,40 +8,17 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.chenyxVision.AutoRun;
-import frc.robot.commands.Autofront;
-import frc.robot.commands.DriveBackwardCmd;
-import frc.robot.commands.DriveForwardCmd;
-import frc.robot.commands.ElevatorDownResetCmd;
-import frc.robot.commands.ElevatorRestCmd;
-import frc.robot.commands.ElevatorTiltCmd;
-import frc.robot.commands.ElevatorWinchCmd;
-import frc.robot.commands.FrontDownCmd;
-import frc.robot.commands.FrontUpCmd;
-import frc.robot.commands.HatchLetGo;
-import frc.robot.commands.HatchPickUp;
-import frc.robot.commands.HatchSwitch;
-import frc.robot.commands.RollinCmd;
-import frc.robot.commands.RolloutCmd;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  public double bottom = 50;
-  public double Hatchpickup = 1120;
-  public double HighCargo = 11496;
-  public double middle = 7602;
-  public double lowcargo = 3825;
-  public double cargoshipc = 5000;
-  public double midhatch = 000000;
-  public double highhatch = 0000000;
-  public AutoRun visionCmd = new AutoRun();
-  public HatchPickUp VisionHatch = new HatchPickUp();
+
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -89,8 +66,8 @@ public class OI {
     public OI() {
     // Experimental
 
-    thumb.whileHeld(VisionHatch);
-    trigger.cancelWhenPressed(VisionHatch);
+    // thumb.whileHeld(VisionHatch);
+    // trigger.cancelWhenPressed(VisionHatch);
 
     // nine.whenPressed(new RotateCmd(90));
     // Elevator Tilt  -- Now using Shffle Board Buttons
@@ -135,10 +112,10 @@ public class OI {
     //alttwelve.whenPressed(new ElevatorTiltCmd(Value.kForward));
     //altten.whenPressed(new ElevatorTiltCmd(Value.kForward));
     //altseven.whenPressed(visionCmd);
-    alteight.cancelWhenPressed(VisionHatch);
+    // alteight.cancelWhenPressed(VisionHatch);
     //altseven.whenPressed(new DriveBackwardCmd(5, .4));
     //three.whenPressed(new HatchLetGo());
-    altseven.whenPressed(VisionHatch);
+    // altseven.whenPressed(VisionHatch);
     //altOne.whenPressed(new ElevatorWinchCmd(1000)); //CHANGE TO CALCULATED VALUE HEIGHTS 
     //altTwo.whenPressed(new ElevatorWinchCmd(2500));
     //altThree.whenPressed(new ElevatorWinchCmd(2750));

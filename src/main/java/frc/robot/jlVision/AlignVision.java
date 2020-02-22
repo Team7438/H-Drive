@@ -1,10 +1,6 @@
 package frc.robot.jlVision;
 
-import edu.wpi.first.networktables.EntryListenerFlags;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class AlignVision {
@@ -19,14 +15,9 @@ public class AlignVision {
         return instance;
     }
 
-    private NetworkTableInstance sd;
-    private NetworkTable outputTable;
-    private NetworkTableEntry outputEntry;
-    private NetworkTableEntry yawOutputEntry;
-    private double[] motorPowerValues;
+
     private static double turnPower = 0.1;
-    private double centerPower = 0;
-    private double ballAngle = 0;
+
     private static double tempPower = 0.2;
     public static double tempVar;
     public static double ballRad;

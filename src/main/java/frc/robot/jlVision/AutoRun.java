@@ -1,12 +1,11 @@
 package frc.robot.jlVision;
 import frc.robot.jlVision.AlignVision;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.*;
 import frc.robot.subsystems.DriveSub;
 
 public class AutoRun extends Command {
-    private AlignVision vision = AlignVision.getInstance();
+    //private AlignVision vision = AlignVision.getInstance();
 
     public AutoRun() {
         requires(Robot.driveSub);
